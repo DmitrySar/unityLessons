@@ -1,48 +1,56 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float radius = 0.2f;
-    private Rigidbody2D rb;
-    private float speed = 8f;
-    private float jumpForce = 13f;
-    public Transform groundCheck;
-    private bool isGround;
 
-    private SpriteRenderer sprite;
+    Rigidbody2D rb;
+    SpriteRenderer spriteRenderer;
+    public Transform groundCheck;
+    float speed = 5f;
+    float jumpForce = 8f;
+    bool isOnGraund;
+    private float radius = 0.1f;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        sprite = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
         flip();
-        CheckGround();
+
     }
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, rb.velocity.y);
-        if (Input.GetAxis("Jump") > 0 && isGround) rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
+        float axisX = Input.GetAxis("Horizontal");
+        rb.velocity = new Vector2(axisX * speed, rb.velocity.y);
+        jump();
+        chekGround();
     }
 
     void flip()
     {
-        float axisX = Input.GetAxis("Horizontal");
-        if (axisX < 0) sprite.flipX = true;
-        if (axisX > 0) sprite.flipX = false;
+        float axis = Input.GetAxis("Horizontal");
+        if (axis < 0) spriteRenderer.flipX = true;
+        if (axis > 0) spriteRenderer.flipX = false; 
     }
 
-    void CheckGround()
+    void jump()
+    {
+        if (Input.GetAxis("Jump") > 0 && isOnGraund) rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
+    }
+
+    void chekGround()
     {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.position, radius);
-        isGround = colliders.Length > 1;
+        isOnGraund = colliders.Length > 1;
     }
+
 }
