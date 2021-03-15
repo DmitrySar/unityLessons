@@ -25,13 +25,11 @@ public class Player : MonoBehaviour
     void Update()
     {
         flip();
-
     }
 
     private void FixedUpdate()
     {
-        float axisX = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector2(axisX * speed, rb.velocity.y);
+        move();
         jump();
     }
 
@@ -51,6 +49,12 @@ public class Player : MonoBehaviour
     {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.position, radius);
         return colliders.Length > 1;
+    }
+
+    void move()
+    {
+        float axisX = Input.GetAxis("Horizontal");
+        rb.velocity = new Vector2(axisX * speed, rb.velocity.y);
     }
 
 }
