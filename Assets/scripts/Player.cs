@@ -7,16 +7,18 @@ public class Player : MonoBehaviour
 
     Rigidbody2D rb;
     SpriteRenderer spriteRenderer;
-    public Transform groundCheck;
+    private Transform groundCheck;
     float speed = 5f;
     float jumpForce = 8f;
     private float radius = 0.1f;
+    private string groundTag = "groundCheck";
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        groundCheck = GameObject.Find(groundTag).transform;
     }
 
     // Update is called once per frame
