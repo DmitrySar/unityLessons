@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     float jumpForce = 8f;
     private float radius = 0.1f;
     private string groundTag = "groundCheck";
+    private Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         groundCheck = GameObject.Find(groundTag).transform;
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -31,6 +33,7 @@ public class Player : MonoBehaviour
     {
         move();
         jump();
+        stand();
     }
 
     void flip()
@@ -42,7 +45,11 @@ public class Player : MonoBehaviour
 
     void jump()
     {
-        if (Input.GetAxis("Jump") > 0 && chekGround()) rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
+        if (Input.GetAxis("Jump") > 0 && chekGround())
+        {
+            rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
+            animator.SetInteger("state", 3);
+        }
     }
 
     bool chekGround()
@@ -54,7 +61,19 @@ public class Player : MonoBehaviour
     void move()
     {
         float axisX = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector2(axisX * speed, rb.velocity.y);
+        if (Input.GetAxis("Jump") == 0 && axisX !=0 && chekGround())
+        {
+            rb.velocity = new Vector2(axisX * speed, rb.velocity.y);
+            animator.SetInteger("state", 2);
+        }
+    }
+
+    void stand()
+    {
+        if (Input.GetAxis("Jump") == 0 && Input.GetAxis("Horizontal") == 0 && chekGround())
+        {
+            animator.SetInteger("state", 1);
+        }
     }
 
 }
