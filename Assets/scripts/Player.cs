@@ -10,7 +10,6 @@ public class Player : MonoBehaviour
     public Transform groundCheck;
     float speed = 5f;
     float jumpForce = 8f;
-    bool isOnGraund;
     private float radius = 0.1f;
 
     // Start is called before the first frame update
@@ -32,7 +31,6 @@ public class Player : MonoBehaviour
         float axisX = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(axisX * speed, rb.velocity.y);
         jump();
-        chekGround();
     }
 
     void flip()
@@ -44,13 +42,13 @@ public class Player : MonoBehaviour
 
     void jump()
     {
-        if (Input.GetAxis("Jump") > 0 && isOnGraund) rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
+        if (Input.GetAxis("Jump") > 0 && chekGround()) rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
     }
 
-    void chekGround()
+    bool chekGround()
     {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.position, radius);
-        isOnGraund = colliders.Length > 1;
+        return colliders.Length > 1;
     }
 
 }
