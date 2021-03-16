@@ -12,7 +12,6 @@ public class Camera : MonoBehaviour
         target = GameObject.Find("Player").transform;
         Vector3 position = target.transform.position;
         transform.position = new Vector3(position.x, position.y, transform.position.z);
-        print(GameObject.Find("Player").name);
     }
 
     // Update is called once per frame
