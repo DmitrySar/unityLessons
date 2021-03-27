@@ -2,61 +2,43 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player
 {
-    //скорость
-    private float speed = 5f;
-    // сила прыжка
-    private float jumpForce = 10f;
     // компонент Rigidbody2D
     private Rigidbody2D rb;
     // компонент SpriteRenderer
     private SpriteRenderer sprite;
     // дочерний компонент checkGround
     private Transform checkGround;
-    //радиус для поиска коллайдеров
-    private float radius = 0.2f;
     private Animator animator;
+    private GameObject player;
 
-    //инициализация объектов
-    void Start()
+    
+    //конструктор
+    public Player(GameObject player)
     {
-        rb = GetComponent<Rigidbody2D>();
-        sprite = GetComponent<SpriteRenderer>();
-        checkGround = GameObject.Find("checkGround").transform;
-        animator = GetComponent<Animator>();
-    }
+        this.player = player;
+        rb = player.GetComponent<Rigidbody2D>();
+        sprite = player.GetComponent<SpriteRenderer>();
+        checkGround = player.transform.Find("checkGround").transform;
+        animator = player.GetComponent<Animator>();
 
-    // зарпускается при смене кадров
-    void Update()
-    {
-        flip();
-        stand();
-    }
-
-    // не зависит от частоты кадров
-    void FixedUpdate()
-    {
-        move();
-        jump();
     }
 
     // движение
-    void move()
+    public void move(float axisX)
     {
-        float axisX = Input.GetAxis("Horizontal");
+        
         if (axisX != 0)
         {
-            rb.velocity = new Vector2(axisX * speed, rb.velocity.y);
-            animator.SetInteger("state", 2);
+            rb.velocity = new Vector2(axisX * PlayerConfig.speed, rb.velocity.y);
+            animator.SetInteger("state", PlayerConfig.MOVE_INDEX);
         }
     }
 
     // поворот
-    void flip()
+    public void flip(float axisX)
     {
-        //            опрос нажатия клавиш
-        float axisX = Input.GetAxis("Horizontal");
         if (axisX < 0)
         {
             sprite.flipX = true;
@@ -68,28 +50,28 @@ public class Player : MonoBehaviour
     }
 
     // прыжок
-    void jump()
+    public void jump()
     {
-        if (Input.GetAxis("Jump") > 0 && isOnGround())
+        if (isOnGround())
         {
-            rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
-            animator.SetInteger("state", 3);
+            rb.AddForce(player.transform.up * PlayerConfig.jumpForce, ForceMode2D.Impulse);
+            animator.SetInteger("state", PlayerConfig.JUMP_INDEX);
         }
     }
 
     // проверка стотит ли объект на платформе
     bool isOnGround()
     {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(checkGround.position, radius);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(checkGround.position, PlayerConfig.radius);
         return colliders.Length > 1;
     }
 
    // в покое
-    void stand()
+    public void stand()
     {
-        if (Input.GetAxis("Jump") == 0 && Input.GetAxis("Horizontal") == 0 && isOnGround())
+        if (isOnGround())
         {
-            animator.SetInteger("state", 1);
+            animator.SetInteger("state", PlayerConfig.STAND_INDEX);
         }
     }
 
