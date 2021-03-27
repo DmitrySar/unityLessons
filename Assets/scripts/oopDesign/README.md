@@ -1,8 +1,8 @@
-Сейчас класс Player написан с нарушениями принципов ООП.
-Разобьём класс Player на 3 класса:
-	- PlayerConfig
-		- вынесем сюда все константы
-	- PlayerController
-		- здесь будут только методы для управления игроком
-	- Player
-		- класс, описывающий самого игрока
+## РЎРµР№С‡Р°СЃ РєР»Р°СЃСЃ Player РЅР°РїРёСЃР°РЅ СЃ РЅР°СЂСѓС€РµРЅРёСЏРјРё РїСЂРёРЅС†РёРїРѕРІ РћРћРџ.
+Р Р°Р·РѕР±СЊС‘Рј РєР»Р°СЃСЃ Player РЅР° 3 РєР»Р°СЃСЃР°:
+- [PlayerConfig](https://github.com/DmitrySar/unityLessons/blob/main/Assets/scripts/PlayerConfig.cs)
+  - РІС‹РЅРµСЃРµРј СЃСЋРґР° РІСЃРµ РєРѕРЅСЃС‚Р°РЅС‚С‹
+- [PlayerController](https://github.com/DmitrySar/unityLessons/blob/main/Assets/scripts/PlayerController.cs)
+  - Р·РґРµСЃСЊ Р±СѓРґСѓС‚ С‚РѕР»СЊРєРѕ РјРµС‚РѕРґС‹ РґР»СЏ СѓРїСЂР°РІР»РµРЅРёСЏ РёРіСЂРѕРєРѕРј
+- [Player](https://github.com/DmitrySar/unityLessons/blob/main/Assets/scripts/Player.cs)
+  - РєР»Р°СЃСЃ, РѕРїРёСЃС‹РІР°СЋС‰РёР№ СЃР°РјРѕРіРѕ РёРіСЂРѕРєР°
