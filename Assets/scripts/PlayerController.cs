@@ -8,20 +8,17 @@ public class PlayerController : MonoBehaviour
     private float axisX;
     private float axisJump;
 
-    //инициализация объектов
     void Start()
     {
         player = new Player(gameObject);
     }
 
-    // зарпускается при смене кадров
     void Update()
     {      
         if (Input.GetAxis("Jump") == 0 && Input.GetAxis("Horizontal") == 0) player.stand();
         else player.flip(axisX);
     }
 
-    // не зависит от частоты кадров
     void FixedUpdate()
     {
         axisX = Input.GetAxis("Horizontal");
