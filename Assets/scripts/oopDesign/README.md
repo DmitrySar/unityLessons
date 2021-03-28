@@ -8,3 +8,4 @@
   - класс, описывающий самого игрока
 
 [Видео процесса рефакторинга](https://youtu.be/BiiWJEWQk3U) 
+[![Видео процесса рефакторинга](https://www.gstatic.com/youtube/img/branding/youtubelogo/svg/youtubelogo.svg)](https://youtu.be/BiiWJEWQk3U)
