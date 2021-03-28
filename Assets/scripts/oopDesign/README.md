@@ -7,4 +7,4 @@
 - [Player](https://github.com/DmitrySar/unityLessons/blob/main/Assets/scripts/Player.cs)
   - класс, описывающий самого игрока
 
-[Видео процесса рефакторинга](https://youtu.be/hJy7JGJzkYM) 
+[Видео процесса рефакторинга](https://youtu.be/BiiWJEWQk3U) 
