@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Player
 {
-    // количество жизней
-    private int livesCount = 3;
     // компонент Rigidbody2D
     private Rigidbody2D rb;
     // компонент SpriteRenderer
@@ -78,27 +76,5 @@ public class Player
             animator.SetInteger("state", PlayerConfig.STAND_INDEX);
         }
     }
-
-    // смерть героя
-    public int dead()
-    {
-        // подбрасываем героя
-        rb.AddForce(player.transform.up * PlayerConfig.jumpForce / 2, ForceMode2D.Impulse);
-        // уменьшаем количество жизней
-        return --livesCount;
-    }
-
-    // окрашивание игрока в красный цвет
-    public void toRedColor()
-    {
-        sprite.color = new Color(1f, 1f - sprite.color.g, 1f - sprite.color.b);
-    }
-
-    // возвращаем прежний цвет
-    public void toNormalColor()
-    {
-        sprite.color = new Color(1f, 1f, 1f);
-    }
-
 
 }
