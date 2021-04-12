@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
         axisX = Input.GetAxis("Horizontal");
         axisJump = Input.GetAxis("Jump");
         if (axisJump > 0) player.jump();
-        else player.move(axisX);
+        if (axisX != 0) player.move(axisX);
 
     }
 
