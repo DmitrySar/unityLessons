@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class PlayerConfig
 {
-    //скорость
+    //СЃРєРѕСЂРѕСЃС‚СЊ
     public const float speed = 5f;
-    // сила прыжка
+    // СЃРёР»Р° РїСЂС‹Р¶РєР°
     public const float jumpForce = 10f;
-    //радиус для поиска коллайдеров
+    //СЂР°РґРёСѓСЃ РґР»СЏ РїРѕРёСЃРєР° РєРѕР»Р»Р°Р№РґРµСЂРѕРІ
     public const float radius = 0.2f;
-    //индексы для анимации
+    //РёРЅРґРµРєСЃС‹ РґР»СЏ Р°РЅРёРјР°С†РёРё
     public const int STAND_INDEX = 1;
     public const int MOVE_INDEX = 2;
     public const int JUMP_INDEX = 3;

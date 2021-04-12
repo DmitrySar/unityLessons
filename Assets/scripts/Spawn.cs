@@ -8,11 +8,11 @@ public class Spawn : MonoBehaviour
     float time = 0f;
     void Update()
     {
-        //ждём какое-то время до создания нового объекта
+        //Р¶РґС‘Рј РєР°РєРѕРµ-С‚Рѕ РІСЂРµРјСЏ РґРѕ СЃРѕР·РґР°РЅРёСЏ РЅРѕРІРѕРіРѕ РѕР±СЉРµРєС‚Р°
         time -= Time.deltaTime;
         if (time < 0)
         {
-            //создание объекта
+            //СЃРѕР·РґР°РЅРёРµ РѕР±СЉРµРєС‚Р°
             Instantiate(circle, transform.position, transform.rotation);
             time = 2f;
         }

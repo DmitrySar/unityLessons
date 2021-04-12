@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    // Объявим поле static, чтобы обращаться к нему не создавая объект
+    // РћР±СЉСЏРІРёРј РїРѕР»Рµ static, С‡С‚РѕР±С‹ РѕР±СЂР°С‰Р°С‚СЊСЃСЏ Рє РЅРµРјСѓ РЅРµ СЃРѕР·РґР°РІР°СЏ РѕР±СЉРµРєС‚
     private static Player player;
     private float axisX;
     private float axisJump;
 
-    // срабатывает до метода start
+    // СЃСЂР°Р±Р°С‚С‹РІР°РµС‚ РґРѕ РјРµС‚РѕРґР° start
     void Awake()
     {
         player = new Player(gameObject);
@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    // создадим метод, возвращающий объект player
+    // СЃРѕР·РґР°РґРёРј РјРµС‚РѕРґ, РІРѕР·РІСЂР°С‰Р°СЋС‰РёР№ РѕР±СЉРµРєС‚ player
     public static Player getPlayer()
     {
         return player;
