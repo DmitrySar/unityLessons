@@ -8,10 +8,12 @@ public class Platform : MonoBehaviour
     public Transform rightPoint;
     private float speed = 2f;
     private Transform point;
+    private SpriteRenderer sprite;
     // Start is called before the first frame update
     void Start()
     {
-        point = rightPoint;
+        point = leftPoint;
+        sprite = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -19,9 +21,17 @@ public class Platform : MonoBehaviour
     {
         float shift = speed * Time.deltaTime;
         if (transform.position.x <= leftPoint.position.x)
+        {
             point = rightPoint;
+            sprite.flipX = true;
+        }    
+            
         if (transform.position.x >= rightPoint.position.x)
+        {
             point = leftPoint;
+            sprite.flipX = false;
+        }
+
         transform.position = Vector3.MoveTowards(transform.position, point.position, shift);
     }
 
