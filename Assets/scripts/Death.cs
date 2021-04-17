@@ -16,14 +16,16 @@ public class Death : MonoBehaviour
     }
 
     //умереть
-    public void die()
+    public int die(int count)
     {
+        livesCount -= count;
         // если количество жизней меньше 0 загружаем сцену заново
-        if (--livesCount < 0) SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        if (livesCount < 0) SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         rb.AddForce(transform.up * PlayerConfig.jumpForce / 2, ForceMode2D.Impulse);
         toRedColor();
         //отложенный запуск через 1 секунду
-        Invoke("toNormalColor", 1f);
+        Invoke("toNormalColor", 0.3f);
+        return livesCount;
 
     }
 
