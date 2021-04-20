@@ -65,8 +65,16 @@
     <Compile Include="Assets\scripts\Death.cs" />
     <Compile Include="Assets\scripts\Player.cs" />
     <Compile Include="Assets\scripts\Enemy.cs" />
+    <Compile Include="Assets\scripts\Ladder.cs" />
   </ItemGroup>
   <ItemGroup>
+     <None Include="Assets\sprites\Spritesheets\spritesheet_hud.xml" />
+     <None Include="Assets\sprites\Spritesheets\spritesheet_ground.xml" />
+     <None Include="Assets\sprites\Spritesheets\spritesheet_players.xml" />
+     <None Include="Assets\sprites\Spritesheets\spritesheet_items.xml" />
+     <None Include="Assets\sprites\Spritesheets\spritesheet_tiles.xml" />
+     <None Include="Assets\sprites\Spritesheets\spritesheet_complete.xml" />
+     <None Include="Assets\sprites\Spritesheets\spritesheet_enemies.xml" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.0f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

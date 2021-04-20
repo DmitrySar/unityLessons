@@ -12,6 +12,7 @@ public class Player
     private Transform checkGround;
     private Animator animator;
     private GameObject player;
+    private int currentAnimationIndex = PlayerConfig.STAND_INDEX;
 
     
     //конструктор
@@ -73,8 +74,13 @@ public class Player
     {
         if (isOnGround())
         {
-            animator.SetInteger("state", PlayerConfig.STAND_INDEX);
+            animator.SetInteger("state", currentAnimationIndex);
         }
+    }
+
+    public void setCurrentAnimationIndex(int index)
+    {
+        currentAnimationIndex = index;
     }
 
 }

@@ -14,4 +14,6 @@ public class PlayerConfig
     public const int STAND_INDEX = 1;
     public const int MOVE_INDEX = 2;
     public const int JUMP_INDEX = 3;
+    public const int ON_LADDER = 4;
+    public const int ON_LADDER_MOVE = 5;
 }
