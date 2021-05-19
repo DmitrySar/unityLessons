@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1285984375465007326}
   - component: {fileID: 7049154385278194480}
   - component: {fileID: 7617750907244943446}
-  - component: {fileID: -5307395474499865255}
+  - component: {fileID: 8283469783794918256}
   m_Layer: 0
   m_Name: fireball
   m_TagString: Untagged
@@ -95,7 +95,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.004838228, y: 0}
@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f4cac9fb55933458da885804a0714d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-5307395474499865255
+--- !u!114 &8283469783794918256
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,7 +122,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 2626243395910219169}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94cc41fbba505964ea03a4dc0e7cb9e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 1abe98f74d0fc604b879c684e7eb1adb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  removeCount: 1

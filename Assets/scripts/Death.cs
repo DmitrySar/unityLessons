@@ -7,12 +7,15 @@ public class Death : MonoBehaviour
 {
     // количество жизней
     [SerializeField] private int livesCount;
+    //максимальное количество жизней
+    private int maxLivesCount;
     Rigidbody2D rb;
     SpriteRenderer sprite;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
+        maxLivesCount = livesCount;
     }
 
     //умереть
@@ -20,7 +23,7 @@ public class Death : MonoBehaviour
     {
         livesCount -= count;
         // если количество жизней меньше 0 загружаем сцену заново
-        if (livesCount < 0) SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        if (livesCount < -1) SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         rb.AddForce(transform.up * PlayerConfig.jumpForce / 2, ForceMode2D.Impulse);
         toRedColor();
         //отложенный запуск через 1 секунду
@@ -52,6 +55,15 @@ public class Death : MonoBehaviour
     private void OnGUI()
     {
         GUI.Box(new Rect(0, 0, 100, 30), "lifes: " + livesCount);
+    }
+
+    //добавляем количество жизней
+    public void addLivesCount()
+    {
+        if (livesCount < maxLivesCount)
+        {
+            livesCount++;
+        }
     }
 
 }

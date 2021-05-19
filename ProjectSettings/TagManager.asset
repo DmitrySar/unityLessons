@@ -6,6 +6,7 @@ TagManager:
   tags:
   - checkGround
   - Ladder
+  - Life
   layers:
   - Default
   - TransparentFX

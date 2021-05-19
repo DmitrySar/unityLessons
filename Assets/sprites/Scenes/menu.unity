@@ -289,8 +289,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 935844565}
-        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+      - m_Target: {fileID: 662852971}
+        m_TargetAssemblyTypeName: Menu, Scripts
         m_MethodName: exit
         m_Mode: 1
         m_Arguments:
@@ -418,6 +418,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 456452314}
   m_CullTransparentMesh: 1
+--- !u!1 &662852970
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 662852972}
+  - component: {fileID: 662852971}
+  m_Layer: 0
+  m_Name: SaveGame
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &662852971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 662852970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43251892f99c4de4e9cf49389dc66fde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level2: {fileID: 2138697831}
+  save: {fileID: 11400000, guid: 1ab959f27947424449c41c897fddd6ec, type: 2}
+--- !u!4 &662852972
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 662852970}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.69, y: 4.28, z: -2.9440494}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &824346432
 GameObject:
   m_ObjectHideFlags: 0
@@ -509,7 +554,6 @@ GameObject:
   - component: {fileID: 935844568}
   - component: {fileID: 935844567}
   - component: {fileID: 935844566}
-  - component: {fileID: 935844565}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -517,18 +561,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &935844565
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 935844564}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43251892f99c4de4e9cf49389dc66fde, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &935844566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -762,8 +794,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 935844565}
-        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+      - m_Target: {fileID: 662852971}
+        m_TargetAssemblyTypeName: Menu, Scripts
         m_MethodName: loadLevel
         m_Mode: 3
         m_Arguments:
@@ -1048,13 +1080,13 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 2138697832}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 935844565}
-        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+      - m_Target: {fileID: 662852971}
+        m_TargetAssemblyTypeName: Menu, Scripts
         m_MethodName: loadLevel
         m_Mode: 3
         m_Arguments:
